@@ -5,10 +5,16 @@ DATE=`date +'%a, %Y-%m-%d %T'`
 
 npm run build
 
-git checkout --orphan gh-pages
+# first run
+# git checkout --orphan gh-pages
+
+# others
+git checkout gh-pages
+
 git add docs
 git commit -am "deploy $DATE"
 git push origin gh-pages --force
+
 git checkout $GIT_CURRENT_BRANCH
 
 echo " "
