@@ -5,16 +5,19 @@ DATE=`date +'%a, %Y-%m-%d %T'`
 
 npm run build
 
-# first run
-# git checkout --orphan gh-pages
-
-# others
 git checkout main
 git merge develop
 
+DEST_FILE=last-deploy.txt
+
+if [ -f "$DEST_FILE" ]
+then 
+    echo "$DATE" >> "$DEST_FILE"
+fi
+
 git add --all
 git commit -am "deploy $DATE"
-git push origin gh-pages --force
+git push origin main --force
 
 git checkout $GIT_CURRENT_BRANCH
 
