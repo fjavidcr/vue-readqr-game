@@ -5,6 +5,10 @@ DATE=`date +'%a, %Y-%m-%d %T'`
 
 npm run build
 
+echo " "
+echo "[ + Starting deploy! ]"
+echo " "
+
 git checkout main
 git merge develop
 
@@ -22,7 +26,7 @@ git push origin main --force
 git checkout $GIT_CURRENT_BRANCH
 
 echo " "
-echo "[ + Finished deploy! ]"
+echo "[ + Finished! ]"
 echo " "
 
 exit 0
