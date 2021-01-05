@@ -11,7 +11,7 @@ npm run build
 # others
 git checkout gh-pages
 
-git add docs
+git add --all
 git commit -am "deploy $DATE"
 git push origin gh-pages --force
 
