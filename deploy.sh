@@ -9,7 +9,8 @@ npm run build
 # git checkout --orphan gh-pages
 
 # others
-git checkout gh-pages
+git checkout main
+git merge develop
 
 git add --all
 git commit -am "deploy $DATE"
