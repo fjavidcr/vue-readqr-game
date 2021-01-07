@@ -2,6 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <pre>Secret Key: {{key}}</pre>
   </div>
 </template>
 
@@ -12,6 +13,11 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data() { 
+    return { 
+      key: process.env.VUE_APP_KEY
+    }
   }
 }
 </script>
