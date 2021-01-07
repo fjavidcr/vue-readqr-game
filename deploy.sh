@@ -3,6 +3,7 @@ GIT_REPO_URL=$(git config --get remote.origin.url)
 GIT_CURRENT_BRANCH=$(git branch --show-current)
 DATE=`date +'%a, %Y-%m-%d %T'`
 
+clear
 npm run build
 
 echo " "
