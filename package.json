@@ -13,6 +13,7 @@
     "bootstrap": "^5.0.0-beta1",
     "core-js": "^3.6.5",
     "papercss": "^1.8.2",
+    "qrcode": "^1.4.4",
     "vue": "^2.6.11"
   },
   "devDependencies": {
