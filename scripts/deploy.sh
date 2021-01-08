@@ -2,7 +2,7 @@
 GIT_REPO_URL=$(git config --get remote.origin.url)
 GIT_CURRENT_BRANCH=$(git branch --show-current)
 DATE=`date +'%a, %Y-%m-%d %T'`
-PRODUCTION_BRANCH=`main`
+PRODUCTION_BRANCH=main
 
 clear
 npm run build
