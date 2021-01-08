@@ -5,7 +5,6 @@ DATE=`date +'%a, %Y-%m-%d %T'`
 PRODUCTION_BRANCH=main
 
 clear
-npm run build
 
 echo " "
 echo "[ + Starting deploy! ]"
@@ -13,6 +12,8 @@ echo " "
 
 git checkout $PRODUCTION_BRANCH
 git merge develop
+
+npm run build
 
 DEST_FILE=last-deploy.txt
 
