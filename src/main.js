@@ -8,10 +8,11 @@ import "./assets/css/app.css"
 
 import VueQrcodeReader from "vue-qrcode-reader"
 import VueRouter from 'vue-router'
+import router from './router'
 
 Vue.use(VueQrcodeReader)
 Vue.use(VueRouter)
-const router = new VueRouter()
+
 
 Vue.config.productionTip = false
 
