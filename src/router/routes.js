@@ -1,5 +1,6 @@
 import Main from '../views/Main.vue'
 import ReadQR from '../views/ReadQR.vue'
+import Login from '../components/Login.vue'
 
 
 export default [
@@ -17,6 +18,6 @@ export default [
     {
         path: '/login',
         name: 'Login',
-        component: ReadQR
+        component: Login
     }
 ]

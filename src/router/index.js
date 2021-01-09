@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import routes from './routes'
+import store from "../store";
 
 Vue.use(Router)
 
@@ -10,7 +11,7 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   if('requiresAuth' in to.meta) { 
-    if(to.meta.requiresAuth && store.state.session.authenticated) { 
+    if(to.meta.requiresAuth && store.getters.isAuthenticated) { 
       next()
     }
     else {
