@@ -1,9 +1,20 @@
 <template>
   <div class="container">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <QrGenerator :url="url"/>
-    <pre>Secret Key: {{key}}</pre>
-    <pre>params: {{this.$route.query}}</pre>
+    <loading v-if="loading" />
+    <div v-if="isAuthenticated">
+      <img alt="Vue logo" src="../assets/logo.png">
+      <QrGenerator :url="url"/>
+      <pre>Secret Key: {{key}}</pre>
+      <pre>params: {{this.$route.query}}</pre>
+    </div>
+    <div v-if="!isAuthenticated && authStatus !== 'loading'">
+      <h1>Welcome to the game !</h1>
+      <p>
+        When meeting new doge friends is harder than ever, Dogebook closes the
+        gap between all paws in the world
+      </p>
+      <login />
+    </div>
   </div>
 </template>
 
@@ -11,16 +22,26 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import QrGenerator from '../components/QrGenerator.vue'
 
+import { mapGetters } from "vuex";
+import Login from "components/Login";
+
 export default {
   name: 'App',
   components: {
-    // HelloWorld, 
+    // HelloWorld,
+    Login,
     QrGenerator
   },
   data() { 
     return { 
       key: process.env.VUE_APP_KEY,
       url: "code=phqljrwebgwebñg"
+    }
+  },
+  computed: {
+    ...mapGetters(["isAuthenticated", "authStatus"]),
+    loading: function() {
+      return this.authStatus === "loading" && !this.isAuthenticated;
     }
   },
   mounted () {
@@ -32,12 +53,4 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

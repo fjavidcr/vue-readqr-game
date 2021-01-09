@@ -1,24 +1,29 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
-import Main from '../views/Main.vue'
-import ReadQR from '../views/ReadQR.vue'
+import routes from './routes'
+import store from "../store";
 
 Vue.use(Router)
 
 const router = new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Main
-    },
-    {
-        path: '/readqr',
-        name: 'ReadQR',
-        component: ReadQR
+  routes: routes
+})
+
+router.beforeEach((to, from, next) => {
+  if('requiresAuth' in to.meta) { 
+    if(to.meta.requiresAuth && store.getters.isAuthenticated) { 
+      next()
     }
-  ]
+    else {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
+    }
+  }
+  else {
+    next()
+  }
 })
 
 export default router;
