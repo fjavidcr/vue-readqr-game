@@ -5,6 +5,8 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <QrGenerator :url="url"/>
     <pre>Secret Key: {{key}}</pre>
+    <!-- <qrcode-stream @decode="onDecode"></qrcode-stream> -->
+    <pre>params: {{this.$route.query}}</pre>
   </div>
 </template>
 
@@ -21,7 +23,15 @@ export default {
   data() { 
     return { 
       key: process.env.VUE_APP_KEY,
-      url: "https://www.npmjs.com/package/qrcode"
+      url: "https://fjavidcr.github.io/#/?r=hello"
+    }
+  },
+  mounted () {
+    console.log(this.$route.query.r)
+  },
+  methods: {
+    onDecode (decodedString) {
+      console.log(decodedString)
     }
   }
 }
