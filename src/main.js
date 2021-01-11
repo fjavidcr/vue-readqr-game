@@ -4,7 +4,7 @@ import 'bootstrap'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'papercss/dist/paper.min.css'
-import "./assets/css/app.css"
+import "assets/css/app.css"
 
 import VueQrcodeReader from "vue-qrcode-reader"
 import VueRouter from 'vue-router'
