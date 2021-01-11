@@ -10,8 +10,7 @@
     <div v-if="!isAuthenticated && authStatus !== 'loading'">
       <h1>Welcome to the game !</h1>
       <p>
-        When meeting new doge friends is harder than ever, Dogebook closes the
-        gap between all paws in the world
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac tempor felis, non tempus nisi. Donec aliquam dui dolor, quis.
       </p>
       <login />
     </div>
@@ -51,6 +50,3 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>

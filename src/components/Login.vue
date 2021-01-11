@@ -17,15 +17,6 @@
   </div>
 </template>
 
-<style>
-.login {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  padding: 10px;
-}
-</style>
-
 <script>
 import { AUTH_REQUEST } from "actions/auth";
 export default {

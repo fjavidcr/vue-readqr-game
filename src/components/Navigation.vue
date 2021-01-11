@@ -1,24 +1,22 @@
 <template>
-  <div class="navigation">
-    <ul>
-      <li>
+  <section>
+    <navbar class="navigation row">
+      <div class="col-auto">
         <router-link class="brand" to="/">
-          <img src="../assets/logo.png" width="40px" />
+          <img src="../assets/logo.png" class="border-0" width="60px" />&nbsp;
         </router-link>
-      </li>
-    </ul>
-    <ul>
-      <li v-if="isProfileLoaded">
-        <router-link to="/account">{{ name }}</router-link>
-      </li>
-      <li v-if="isAuthenticated" @click="logout">
-        <span class="logout">Logout</span>
-      </li>
-      <li v-if="!isAuthenticated && !authLoading">
-        <router-link to="/login">Login</router-link>
-      </li>
-    </ul>
-  </div>
+      </div>
+      <div class="col">
+        <div class="d-flex justify-content-end" v-if="isAuthenticated" @click="logout">
+          <router-link class="my-auto px-4 profile" to="/account" v-if="isProfileLoaded">{{ name }}</router-link>
+          <span class="logout paper-btn btn-primary">Logout</span>
+        </div>
+        <div class="d-flex justify-content-end" v-if="!isAuthenticated && !authLoading">
+          <router-link class="paper-btn btn-success" to="/login">Login</router-link>
+        </div>
+      </div>
+    </navbar>
+  </section>
 </template>
 
 <script>
@@ -41,35 +39,3 @@ export default {
   }
 }
 </script>
-
-<style lang="css" scoped>
-a {
-  color: white;
-  text-decoration: none;
-}
-.navigation {
-  display: flex;
-  color: white;
-  align-items: center;
-  background-color: #ffa035;
-  padding: 5px;
-  
-}
-.navigation ul {
-  display: flex;
-}
-.navigation ul li {
-  padding-right: 1em;
-}
-.navigation ul:first-child {
-  flex-grow: 1;
-}
-.brand {
-  display: flex;
-  align-items: center;
-}
-.logout:hover {
-  cursor: pointer;
-}
-
-</style>
