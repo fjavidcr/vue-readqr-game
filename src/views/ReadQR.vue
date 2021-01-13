@@ -9,7 +9,7 @@
 
 export default {
   name: 'ReadQR',
-  data() { 
+  data () {
     return {
       decodedData: null
     }

@@ -20,20 +20,20 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex"
-import { AUTH_LOGOUT } from "actions/auth"
+import { mapGetters, mapState } from 'vuex'
+import { AUTH_LOGOUT } from '@/store/actions/auth'
 
 export default {
-  name: "Navigation",
+  name: 'Navigation',
   methods: {
-    logout: function() {
-      this.$store.dispatch(AUTH_LOGOUT).then(() => this.$router.push("/login"))
+    logout: function () {
+      this.$store.dispatch(AUTH_LOGOUT).then(() => this.$router.push('/login'))
     }
   },
   computed: {
-    ...mapGetters(["getProfile", "isAuthenticated", "isProfileLoaded"]),
+    ...mapGetters(['getProfile', 'isAuthenticated', 'isProfileLoaded']),
     ...mapState({
-      authLoading: state => state.auth.status === "loading",
+      authLoading: state => state.auth.status === 'loading',
       name: state => `${state.user.profile.title} ${state.user.profile.name}`
     })
   }
