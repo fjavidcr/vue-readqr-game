@@ -18,22 +18,22 @@
 </template>
 
 <script>
-import { AUTH_REQUEST } from "actions/auth";
+import { AUTH_REQUEST } from '@/store/actions/auth'
 export default {
-  name: "Login",
-  data() {
+  name: 'Login',
+  data () {
     return {
-      username: "",
-      password: ""
-    };
+      username: '',
+      password: ''
+    }
   },
   methods: {
-    login: function() {
-      const { username, password } = this;
+    login: function () {
+      const { username, password } = this
       this.$store.dispatch(AUTH_REQUEST, { username, password }).then(() => {
-        this.$router.push("/");
-      });
+        this.$router.push('/')
+      })
     }
   }
-};
+}
 </script>

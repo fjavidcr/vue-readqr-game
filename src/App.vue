@@ -8,21 +8,21 @@
 </template>
 
 <script>
-import Navigation from "components/Navigation";
-import { USER_REQUEST } from "actions/user";
+import Navigation from '@/components/Navigation'
+import { USER_REQUEST } from '@/store/actions/user'
 
 export default {
   name: 'App',
   components: {
     Navigation
   },
-  data() { 
+  data () {
     return {
     }
   },
-  created: function() {
+  created: function () {
     if (this.$store.getters.isAuthenticated) {
-      this.$store.dispatch(USER_REQUEST);
+      this.$store.dispatch(USER_REQUEST)
     }
   }
 }

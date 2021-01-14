@@ -28,8 +28,8 @@ export default {
         quality: 0.5,
         margin: 3,
         color: {
-          dark:"#010599FF",
-          light:"#FFBF60FF"
+          dark: '#010599FF',
+          light: '#FFBF60FF'
         }
       }
       try {

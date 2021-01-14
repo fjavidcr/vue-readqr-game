@@ -21,8 +21,8 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import QrGenerator from '../components/QrGenerator.vue'
 
-import { mapGetters } from "vuex";
-import Login from "components/Login";
+import { mapGetters } from 'vuex'
+import Login from '@/components/Login'
 
 export default {
   name: 'App',
@@ -31,16 +31,16 @@ export default {
     Login,
     QrGenerator
   },
-  data() { 
-    return { 
+  data () {
+    return {
       key: process.env.VUE_APP_KEY,
-      url: "code=phqljrwebgwebñg"
+      url: 'code=phqljrwebgwebñg'
     }
   },
   computed: {
-    ...mapGetters(["isAuthenticated", "authStatus"]),
-    loading: function() {
-      return this.authStatus === "loading" && !this.isAuthenticated;
+    ...mapGetters(['isAuthenticated', 'authStatus']),
+    loading: function () {
+      return this.authStatus === 'loading' && !this.isAuthenticated
     }
   },
   mounted () {
