@@ -1,4 +1,4 @@
-# fjavidcr.github.io
+# vue-readqr-game
 
 > A Vue.js project
 
